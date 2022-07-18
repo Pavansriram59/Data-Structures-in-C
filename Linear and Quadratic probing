@@ -1,4 +1,5 @@
 //. Linear probing
+// Online C compiler to run C program online
 #include<stdio.h>
 #include<stdlib.h>
 #define SIZE 7
@@ -30,6 +31,21 @@ void display(){
         printf("a[%d]=%d\n",i,a[i]);
     }
 }
+void search(int val){
+    int key=val%SIZE,i,index=0;
+    if(a[key]==val)
+    printf("%d element found",val);
+    else{
+        for(i=0;i<SIZE;i++){
+            index=(key+i)%SIZE;
+            if(a[index]==val){
+                printf("%d element found",val);
+                break;
+            }
+        }
+        printf("%d ele not found",val);
+    }
+}
 void main()
 {
     array();
@@ -44,6 +60,7 @@ void main()
         n--;
     }
     display();
+    search(45);
 }
 // Quadratic probing
 
